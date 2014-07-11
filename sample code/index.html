@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </head>
+    <body ng-controller="ContactsController as contacts">
+        <button   type="button" ng-click="contacts.addNewContact()">AddNewContact</button>
+        <div ng-show="contacts.isAddNewContact" >
+            <h1>New Contact Info</h1>
+            <label>First Name:</label>
+            <input type="text" ng-model="contacts.newContact.firstName"/> <br/>
+            
+            <label>Last Name:</label>
+            <input type="text" ng-model="contacts.newContact.lastName"/><br/>
+            <label>Email:</label>
+            <input type="text" ng-model="contacts.newContact.email"/><br/>
+            <label>Phone Number:</label>
+            <input type="text" ng-model="contacts.newContact.phone"/>
+            <button   type="button" ng-click="contacts.saveContact()">Save</button>
+        </div>
+
+        <h1>Contact Info</h1>
+        <div  >
+            <label>First Name: {{contacts.contact.firstName}}</label><br/>
+            <label>Last Name: {{contacts.contact.lastName}}</label><br/>
+            <label>Email: {{contacts.contact.email}}</label><br/>
+            <label>Phone Number: {{contacts.contact.phone}}</label> 
+        </div>
+    </body>
+</html>  
